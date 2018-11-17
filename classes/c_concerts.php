@@ -6,22 +6,21 @@ class Concerts {
 	public $name = '';
 	public $image = '';
 	public $website = '';
-	public $address = '';
 	public $type = '';
 	public $price = '';
 	public $date = '';
 	public $time = '';
+	public $locationId = '';
 
-	function __construct($name, $image, $website, $address, $type, $price, $date, $time){
+	function __construct($name, $image, $website, $type, $price, $date, $time, $locationId){
 		$this->name = $name;
 		$this->image = $image;
 		$this->website = $website;
-		$this->address = $address;
 		$this->type = $type;
 		$this->price = $price;
 		$this->date = $date;
 		$this->time = $time;
-
+		$this->locationId = $locationId;
 	}
 
 	public function writeDatabase(){
@@ -33,20 +32,20 @@ class Concerts {
 			name, 
 			image,
 			website,
-			address,
 			type,
 			price,
 			date,
-			time)
+			time,
+			fk_location_id)
 			VALUES (
 			'$this->name',
 			'$this->image',
 			'$this->website',
-			'$this->address',
 			'$this->type',
 			'$this->price',
 			'$this->date',
-			'$this->time')";
+			'$this->time',
+			'$this->locationId')";
 
 		$result = mysqli_query($conn, $query);
 

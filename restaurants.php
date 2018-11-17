@@ -112,7 +112,8 @@ session_start();
           $db = new Database();
           $conn = $db->connectDB();
 
-          $query = "SELECT * FROM restaurants";
+          $query = "SELECT location.address, restaurants.* FROM restaurants
+                    LEFT JOIN location ON restaurants.fk_location_id = location.id";
 
           $result = mysqli_query($conn, $query);
 

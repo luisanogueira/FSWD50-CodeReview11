@@ -7,19 +7,18 @@ class Restaurant {
 	public $image = '';
 	public $website = '';
 	public $phone = '';
-	public $address = '';
 	public $description = '';
 	public $type = '';
+	public $locationId = '';
 
-	function __construct($name, $image, $website, $phone, $address, $description, $type){
+	function __construct($name, $image, $website, $phone, $description, $type, $locationId){
 		$this->name = $name;
 		$this->image = $image;
 		$this->website = $website;
 		$this->phone = $phone;
-		$this->address = $address;
 		$this->description = $description;
 		$this->type = $type;
-
+		$this->locationId = $locationId;
 	}
 
 	public function writeDatabase(){
@@ -32,17 +31,17 @@ class Restaurant {
 			image,
 			website,
 			phone,
-			address,
 			description,
-			type)
+			type,
+			fk_location_id)
 			VALUES (
 			'$this->name',
 			'$this->image',
 			'$this->website',
 			'$this->phone',
-			'$this->address',
 			'$this->description',
-			'$this->type')";
+			'$this->type',
+			'$this->locationId')";
 
 		$result = mysqli_query($conn, $query);
 

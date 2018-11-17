@@ -112,7 +112,8 @@ session_start();
           $db = new Database();
           $conn = $db->connectDB();
 
-          $query1 = "SELECT * FROM things_todo";
+          $query1 = "SELECT location.address, things_todo.* FROM things_todo
+                    LEFT JOIN location ON things_todo.fk_location_id = location.id";
 
           $result1 = mysqli_query($conn, $query1);
 
@@ -128,7 +129,8 @@ session_start();
                     echo "0 results";
                 }
 
-          $query2 = "SELECT * FROM concerts";
+          $query2 = "SELECT location.address, concerts.* FROM concerts
+                    LEFT JOIN location ON concerts.fk_location_id = location.id";
 
             $result2 = mysqli_query($conn, $query2);
 

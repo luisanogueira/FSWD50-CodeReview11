@@ -128,7 +128,8 @@
           $db = new Database();
           $conn = $db->connectDB();
 
-          $query = "SELECT * FROM restaurants";
+          $query = "SELECT location.address, restaurants.* FROM restaurants
+                    LEFT JOIN location ON restaurants.fk_location_id = location.id";
 
           $result = mysqli_query($conn, $query);
 
@@ -144,7 +145,8 @@
                     echo "0 results";
                 }
 
-          $query1 = "SELECT * FROM things_todo";
+          $query1 = "SELECT location.address, things_todo.* FROM things_todo
+                    LEFT JOIN location ON things_todo.fk_location_id = location.id";
 
           $result1 = mysqli_query($conn, $query1);
 
@@ -160,7 +162,8 @@
                     echo "0 results";
                 }
 
-            $query2 = "SELECT * FROM concerts";
+            $query2 = "SELECT location.address, concerts.* FROM concerts
+                    LEFT JOIN location ON concerts.fk_location_id = location.id";
 
             $result2 = mysqli_query($conn, $query2);
 

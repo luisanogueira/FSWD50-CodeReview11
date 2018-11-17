@@ -6,18 +6,18 @@ class Things {
 	public $name = '';
 	public $image = '';
 	public $website = '';
-	public $address = '';
 	public $description = '';
 	public $type = '';
+	public $locationId = '';
 
-	function __construct($name, $image, $website, $address, $description, $type){
+	function __construct($name, $image, $website, $description, $type, $locationId){
 		$this->name = $name;
 		$this->image = $image;
 		$this->website = $website;
 		$this->address = $address;
 		$this->description = $description;
 		$this->type = $type;
-
+		$this->locationId = $locationId;
 	}
 
 	public function writeDatabase(){
@@ -29,16 +29,17 @@ class Things {
 			name, 
 			image,
 			website,
-			address,
 			description,
-			type)
+			type,
+			fk_location_id)
 			VALUES (
 			'$this->name',
 			'$this->image',
 			'$this->website',
 			'$this->address',
 			'$this->description',
-			'$this->type')";
+			'$this->type',
+		    '$this->locationId')";
 
 		$result = mysqli_query($conn, $query);
 

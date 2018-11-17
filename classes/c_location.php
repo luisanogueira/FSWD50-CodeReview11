@@ -6,13 +6,11 @@ class Location {
 	public $address = '';
 	public $city = '';
 	public $ZIP_code = '';
-	public $event_id = '';
 
-	function __construct($address, $city, $ZIP_code, $event_id){
+	function __construct($address, $city, $ZIP_code){
 		$this->address = $address;
 		$this->city = $city;
 		$this->ZIP_code = $ZIP_code;
-		$this->event_id = $event_id;
 	}
 
 	public function writeDatabase(){
@@ -23,13 +21,11 @@ class Location {
 		$query = "INSERT INTO location (
 			address,
 			city,
-			ZIP_code,
-			event_id)
+			ZIP_code)
 			VALUES (
 			'$this->address',
 			'$this->city',
-			'$this->ZIP_code',
-			'$this->event_id')";
+			'$this->ZIP_code')";
 
 		$result = mysqli_query($conn, $query);
 

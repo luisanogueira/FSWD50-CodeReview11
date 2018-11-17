@@ -42,3 +42,8 @@ body {
 #formRes, #formThings, #formCon {
   display: none;
 }
+
+a {
+  color: white;
+  text-decoration: none;
+}

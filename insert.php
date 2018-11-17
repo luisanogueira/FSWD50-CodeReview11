@@ -175,28 +175,27 @@
       </form>
         
         <?php 
-        include_once "classes/c_restaurants.php";
         include_once "classes/c_location.php";
+        include_once "classes/c_restaurants.php";
 
         if(isset($_POST["submitRes"])){
+          $newLocation = new Location(
+            $_POST["address"], 
+            $_POST["city"], 
+            $_POST["ZIP_code"]);
+
+          $locationId = $newLocation->writeDatabase();
+
           $newRestaurant = new Restaurant(
             $_POST["name"], 
             $_POST["image"],
             $_POST["website"],
             $_POST["phone"],
-            $_POST["address"],
             $_POST["description"],
-            $_POST["type"]);
+            $_POST["type"],
+            $locationId);
 
-          $restaurantId = $newRestaurant->writeDatabase();
-
-          $newLocation = new Location(
-            $_POST["address"], 
-            $_POST["city"], 
-            $_POST["ZIP_code"], 
-            $restaurantId);
-
-          $newLocation->writeDatabase();
+          $newRestaurant->writeDatabase();
         }
 
         ?>
@@ -246,27 +245,28 @@
         
 
         <?php 
-        include_once "classes/c_things.php";
         include_once "classes/c_location.php";
+        include_once "classes/c_things.php";
 
         if(isset($_POST["submitThing"])){
+          $newLocation = new Location(
+            $_POST["address"], 
+            $_POST["city"], 
+            $_POST["ZIP_code"]);
+
+          $locationId = $newLocation->writeDatabase();
+
           $newThings = new Things(
             $_POST["name"], 
             $_POST["image"],
             $_POST["website"],
             $_POST["address"],
             $_POST["description"],
-            $_POST["type"]);
+            $_POST["type"],
+            $locationId);
 
-          $thingsId = $newThings->writeDatabase();
+          $newThings->writeDatabase();
 
-          $newLocation = new Location(
-            $_POST["address"], 
-            $_POST["city"], 
-            $_POST["ZIP_code"], 
-            $thingsId);
-
-          $newLocation->writeDatabase();
         }
 
         ?>
@@ -324,10 +324,17 @@
         
 
         <?php 
-        include_once "classes/c_concerts.php";
         include_once "classes/c_location.php";
+        include_once "classes/c_concerts.php";
 
         if(isset($_POST["submitCon"])){
+          $newLocation = new Location(
+            $_POST["address"], 
+            $_POST["city"], 
+            $_POST["ZIP_code"]);
+
+          $locationId = $newLocation->writeDatabase();
+
           $newConcerts = new Concerts(
             $_POST["name"], 
             $_POST["image"],
@@ -336,17 +343,10 @@
             $_POST["type"],
             $_POST["price"],
             $_POST["date"],
-            $_POST["time"]);
+            $_POST["time"],
+            $locationId);
 
-          $concertsId = $newConcerts->writeDatabase();
-
-          $newLocation = new Location(
-            $_POST["address"], 
-            $_POST["city"], 
-            $_POST["ZIP_code"], 
-            $concertsId);
-
-          $newLocation->writeDatabase();
+          $newConcerts->writeDatabase();
         }
 
         ?>
