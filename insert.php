@@ -260,7 +260,6 @@
             $_POST["name"], 
             $_POST["image"],
             $_POST["website"],
-            $_POST["address"],
             $_POST["description"],
             $_POST["type"],
             $locationId);
@@ -339,7 +338,6 @@
             $_POST["name"], 
             $_POST["image"],
             $_POST["website"],
-            $_POST["address"],
             $_POST["type"],
             $_POST["price"],
             $_POST["date"],

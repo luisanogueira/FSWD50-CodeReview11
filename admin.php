@@ -142,7 +142,7 @@
                   echo "<h2 class='p-3 text-center'>Restaurants</h2><div class='row'>";
                   // output data of each row
                   while($row = $result->fetch_assoc()) {
-                      echo "<div class='col-lg-4 col-sm-6'><div class='card h-100'><h4 class='card-title text-center'>".$row["name"]."</h4><div class='card-body'><img class='card-img-top' src=".$row["image"]."><p>Website: ".$row["website"]."</p><p>Phone: ".$row["phone"]."</p><p>Address: ".$row["address"]."</p><p>".$row["description"]."</p><p>Type: ".$row["type"]."</p><button type='button' class='btn btn-success p-2 m-2 text-center'><a href='update/u_restaurants.php?restaurantId={$row['id']}'>Update</a></button><button type='button' class='btn btn-danger p-2 m-2 text-center'><a href='delete.php?restaurantId={$row['id']}'>Delete</a></button></div></div></div>";
+                      echo "<div class='col-lg-4 col-sm-6'><div class='card h-100'><h4 class='card-title text-center'>".$row["name"]."</h4><div class='card-body'><img class='card-img-top' src=".$row["image"]."><p>Website: ".$row["website"]."</p><p>Phone: ".$row["phone"]."</p><p>Address: ".$row["address"]."</p><p>".$row["description"]."</p><p>Type: ".$row["type"]."</p><button type='button' class='btn btn-success p-2 m-2 text-center'><a href='update/u_restaurants.php?restaurantId={$row['id']}'>Update</a></button><button type='button' class='btn btn-danger p-2 m-2 text-center'><a href='delete/d_restaurants.php?restaurantId={$row['id']}'>Delete</a></button></div></div></div>";
 
                     }
                     echo "</div>";
@@ -159,7 +159,7 @@
                   echo "<h2 class='p-3 text-center'>Things to do</h2><div class='row'>";
                   // output data of each row
                   while($row = $result1->fetch_assoc()) {
-                      echo "<div class='col-lg-4 col-sm-6'><div class='card h-100'><h4 class='card-title text-center'>".$row["name"]."</h4><div class='card-body'><img class='card-img-top' src=".$row["image"]."><p>Website: ".$row["website"]."</p><p>Address: ".$row["address"]."</p><p>".$row["description"]."</p><p>Type: ".$row["type"]."</p><button type='button' class='btn btn-success p-2 m-2 text-center'><a href='update/u_things.php?thingsId={$row['id']}'>Update</a></button><button type='button' class='btn btn-danger p-2 m-2 text-center'><a href='delete.php?thingsId={$row['id']}'>Delete</a></button></div></div></div>";
+                      echo "<div class='col-lg-4 col-sm-6'><div class='card h-100'><h4 class='card-title text-center'>".$row["name"]."</h4><div class='card-body'><img class='card-img-top' src=".$row["image"]."><p>Website: ".$row["website"]."</p><p>Address: ".$row["address"]."</p><p>".$row["description"]."</p><p>Type: ".$row["type"]."</p><button type='button' class='btn btn-success p-2 m-2 text-center'><a href='update/u_things.php?thingsId={$row['id']}'>Update</a></button><button type='button' class='btn btn-danger p-2 m-2 text-center'><a href='delete/d_things.php?thingsId={$row['id']}'>Delete</a></button></div></div></div>";
 
                     }
                     echo "</div>";
@@ -176,7 +176,7 @@
                   echo "<h2 class='p-3 text-center'>Concerts</h2><div class='row'>";
                   // output data of each row
                   while($row = $result2->fetch_assoc()) {
-                      echo "<div class='col-lg-4 col-sm-6'><div class='card h-100'><h4 class='card-title text-center'>".$row["name"]."</h4><div class='card-body'><img class='card-img-top' src=".$row["image"]."><p>Website: ".$row["website"]."</p><p>Address: ".$row["address"]."</p><p>Type: ".$row["type"]."</p><p>Price: ".$row["price"]."</p><p>Date: ".$row["date"]."</p><p>Time: ".$row["time"]."</p><button type='button' class='btn btn-success p-2 m-2 text-center'><a href='update/u_concerts.php?concertsId={$row['id']}'>Update</a></button><button type='button' class='btn btn-danger p-2 m-2 text-center'><a href='delete.php?concertsId={$row['id']}'>Delete</a></button></div></div></div>";
+                      echo "<div class='col-lg-4 col-sm-6'><div class='card h-100'><h4 class='card-title text-center'>".$row["name"]."</h4><div class='card-body'><img class='card-img-top' src=".$row["image"]."><p>Website: ".$row["website"]."</p><p>Address: ".$row["address"]."</p><p>Type: ".$row["type"]."</p><p>Price: ".$row["price"]."</p><p>Date: ".$row["date"]."</p><p>Time: ".$row["time"]."</p><button type='button' class='btn btn-success p-2 m-2 text-center'><a href='update/u_concerts.php?concertsId={$row['id']}'>Update</a></button><button type='button' class='btn btn-danger p-2 m-2 text-center'><a href='delete/d_concerts.php?concertsId={$row['id']}'>Delete</a></button></div></div></div>";
 
                     }
                     echo "</div>";

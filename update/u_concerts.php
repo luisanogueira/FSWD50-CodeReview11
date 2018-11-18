@@ -40,62 +40,84 @@ if($_GET) {
     $result = $conn->query($query);
     $data = $result->fetch_assoc();
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
-	<form action="u_concerts.php" method="POST" accept-charset="utf-8">
-		<input type="hidden" name="locationId" value="<?php echo $data['fk_location_id']?>">
-		<input type="hidden" name="concertsId" value="<?php echo $concertsId?>">
-	    <div class ="row">
-          <div class="col-6 p-4">
-              <div class="form-group">
-                <label>Name</label>
-                <input class="form-control" type="text" name="name" value="<?php echo $data['name']?>">
-              </div>
-              <div class="form-group">
-                <label>Image</label>
-                <input class="form-control" type="text" name="image" value="<?php echo $data['image']?>">
-              </div>
-              <div class="form-group">
-                <label>Website</label>
-                <input class="form-control" type="text" name="website" value="<?php echo $data['website']?>">
-              </div>
-              <div class="form-group">
-                <label>Address</label>
-                <input class="form-control" type="text" name="address" value="<?php echo $data['address']?>">
-              </div>
-              <div class="form-group">
-                <label>City</label>
-                <input class="form-control" type="text" name="city" value="<?php echo $data['city']?>">
-              </div>
-            </div>
+  <head>
 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Travel Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/modern-business.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+  	<form action="u_concerts.php" method="POST" accept-charset="utf-8">
+  		<input type="hidden" name="locationId" value="<?php echo $data['fk_location_id']?>">
+  		<input type="hidden" name="concertsId" value="<?php echo $concertsId?>">
+  	    <div class ="row">
             <div class="col-6 p-4">
-              <div class="form-group">
-                <label>ZIP code</label>
-                <input class="form-control" type="text" name="ZIP_code" value="<?php echo $data['ZIP_code']?>">
+                <div class="form-group">
+                  <label>Name</label>
+                  <input class="form-control" type="text" name="name" value="<?php echo $data['name']?>">
+                </div>
+                <div class="form-group">
+                  <label>Image</label>
+                  <input class="form-control" type="text" name="image" value="<?php echo $data['image']?>">
+                </div>
+                <div class="form-group">
+                  <label>Website</label>
+                  <input class="form-control" type="text" name="website" value="<?php echo $data['website']?>">
+                </div>
+                <div class="form-group">
+                  <label>Address</label>
+                  <input class="form-control" type="text" name="address" value="<?php echo $data['address']?>">
+                </div>
+                <div class="form-group">
+                  <label>City</label>
+                  <input class="form-control" type="text" name="city" value="<?php echo $data['city']?>">
+                </div>
               </div>
-              <div class="form-group">
-                <label>Type</label>
-                <input class="form-control" type="text" name="type" value="<?php echo $data['type']?>">
-              </div>
-              <div class="form-group">
-                <label>Price</label>
-                <input class="form-control" type="text" name="price" value="<?php echo $data['price']?>">
-              </div>
-              <div class="form-group">
-                <label>Date</label>
-                <input class="form-control" type="text" name="date" value="<?php echo $data['date']?>">
-              </div>
-              <div class="form-group">
-                <label>Time</label>
-                <input class="form-control" type="text" name="time" value="<?php echo $data['time']?>">
+
+              <div class="col-6 p-4">
+                <div class="form-group">
+                  <label>ZIP code</label>
+                  <input class="form-control" type="text" name="ZIP_code" value="<?php echo $data['ZIP_code']?>">
+                </div>
+                <div class="form-group">
+                  <label>Type</label>
+                  <input class="form-control" type="text" name="type" value="<?php echo $data['type']?>">
+                </div>
+                <div class="form-group">
+                  <label>Price</label>
+                  <input class="form-control" type="text" name="price" value="<?php echo $data['price']?>">
+                </div>
+                <div class="form-group">
+                  <label>Date</label>
+                  <input class="form-control" type="text" name="date" value="<?php echo $data['date']?>">
+                </div>
+                <div class="form-group">
+                  <label>Time</label>
+                  <input class="form-control" type="text" name="time" value="<?php echo $data['time']?>">
+                </div>
               </div>
             </div>
-          </div>
-            
-      	<button type="submit">Save Changes</button>
-	    <button type="button"><a href="../admin.php">Back</a></button>
-	  
-	</form>
+              
+        	<button type="submit">Save Changes</button>
+  	    <button type="button"><a href="../admin.php">Back</a></button>
+  	  
+  	</form>
+  </body>
+  </html>
 
 <?php
 	}

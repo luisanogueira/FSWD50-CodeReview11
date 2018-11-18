@@ -14,7 +14,6 @@ class Things {
 		$this->name = $name;
 		$this->image = $image;
 		$this->website = $website;
-		$this->address = $address;
 		$this->description = $description;
 		$this->type = $type;
 		$this->locationId = $locationId;
@@ -36,7 +35,6 @@ class Things {
 			'$this->name',
 			'$this->image',
 			'$this->website',
-			'$this->address',
 			'$this->description',
 			'$this->type',
 		    '$this->locationId')";
